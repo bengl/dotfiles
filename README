@@ -1,0 +1,28 @@
+For the moment I've only included my vim-related files. More to come (probably).
+
+A few notes:
+1) I tend to use iTerm2 with the Solarized-Dark theme.
+2) These days I'm mostly doing Ruby on Rails stuff, but as you can see by some of my plugins, I like to dabble.
+3) I use both Vim 7.3 (in iTerm2) and MacVim.
+4) I don't disable the arrow keys. I still don't see the benefit. Sorry.
+5) Use these files in any way you see fit. They're public domain.
+
+Usage:
+
+$ # get everything from git
+$ git clone git://github.com/bengl/dotfiles.git bengl_dotfiles
+$ cd bengl_dotfiles
+$ git submodule init
+$ git submodule update
+$ # install pathogen
+$ mkdir -p vim/autoload
+$ curl https://raw.github.com/tpope/vim-pathogen/HEAD/autoload/pathogen.vim > vim/autoload/pathogen.vim
+$ # link up the files
+$ ln -s vim ~/.vim
+$ ln -s vimrc ~/.vimrc
+$ ln -s gvimrc ~/.gvimrc
+
+
+
+
+@bengl

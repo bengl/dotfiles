@@ -32,10 +32,5 @@ let NERDTreeDirArrows=1
 set incsearch
 set hlsearch
 
-"if has('gui_running')
-"	colorscheme solarized
-"  set background=dark
-"endif
-
 let g:ConqueTerm_Color = 1
 let g:ConqueTerm_InsertOnEnter = 0
