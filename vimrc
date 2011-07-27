@@ -21,11 +21,10 @@ set ofu=syntaxcomplete#Complete
 imap <M-Space> <C-X><C-O>
 set mouse=a
 
-"folding settings
-set foldmethod=indent   "fold based on indent
-set foldnestmax=10      "deepest fold is 10 levels
-set nofoldenable        "dont fold by default
-set foldlevel=0         "this is just what i use
+set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
+set foldlevel=0
 
 let NERDTreeDirArrows=1
 
