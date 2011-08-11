@@ -31,5 +31,5 @@ let NERDTreeDirArrows=1
 set incsearch
 set hlsearch
 
-let g:ConqueTerm_Color = 1
-let g:ConqueTerm_InsertOnEnter = 0
+"let g:ConqueTerm_Color = 1
+"let g:ConqueTerm_InsertOnEnter = 0
