@@ -1,11 +1,11 @@
-For the moment I've only included my vim-related files. More to come (probably).
+For the moment I've only included my vim-related files, and my iTerm2 config. More to come (probably).
 
 A few notes:
-1) I tend to use iTerm2 with the Solarized-Dark theme, and Anonymos Pro as the font for everything.
-2) These days I'm mostly doing Ruby on Rails stuff, but as you can see by some of my plugins, I like to dabble.
-3) I use both Vim 7.3 (in iTerm2) and MacVim.
-4) I don't disable the arrow keys. I still don't see the benefit. Sorry.
-5) Use these files in any way you see fit. They're public domain.
+1) These days I'm mostly doing Ruby on Rails stuff, but as you can see by some of my plugins, I like to dabble.
+2) I use both Vim 7.3 (in iTerm2) and MacVim.
+3) I don't disable the arrow keys. I still don't see the benefit. Sorry.
+4) The iTerm2 config requires version 1.0.0.20110810.
+4) Use these files in any way you see fit. They're public domain.
 
 Usage:
 
@@ -21,7 +21,7 @@ $ # link up the files
 $ ln -s vim ~/.vim
 $ ln -s vimrc ~/.vimrc
 $ ln -s gvimrc ~/.gvimrc
-
+And for iTerm2, just import the plist file.
 
 
 
