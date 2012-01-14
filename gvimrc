@@ -10,7 +10,5 @@ set background=dark
 
 if has("gui_macvim")
 	macmenu &File.New\ Tab key=<nop>
-	map <D-t> :CommandT<CR>
-	let g:Powerline_symbols='fancy'
 endif
 

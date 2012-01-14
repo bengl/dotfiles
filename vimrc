@@ -56,4 +56,6 @@ set t_Co=256
 
 let g:Powerline_symbols='fancy'
 
-
+if has("gui_macvim")
+  map <D-t> :CommandT<CR>
+endif
