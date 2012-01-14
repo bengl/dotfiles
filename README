@@ -5,22 +5,32 @@ A few notes:
 2) I use both Vim 7.3 (in iTerm2) and MacVim.
 3) I don't disable the arrow keys. I still don't see the benefit. Sorry.
 4) The iTerm2 config requires version 1.0.0.20111020.
-5) Use these files in any way you see fit. They're public domain.
+5) FONTDIR could be a few places depending on your system. On a Mac, try ~/Library/Fonts/.  On Linux, try ~/.fonts/.
+6) Ruby is required for some things to work, and so are gcc, make & friends.
+7) Use these files in any way you see fit. They're public domain.
 
 Usage:
 
-$ # get everything from git
+# get everything from git
 $ git clone git://github.com/bengl/dotfiles.git bengl_dotfiles
 $ cd bengl_dotfiles
 $ git submodule init
 $ git submodule update
-$ # install pathogen
-$ mkdir -p vim/autoload
-$ curl https://raw.github.com/tpope/vim-pathogen/HEAD/autoload/pathogen.vim > vim/autoload/pathogen.vim
-$ # link up the files
+# link up the files
 $ ln -s vim ~/.vim
 $ ln -s vimrc ~/.vimrc
 $ ln -s gvimrc ~/.gvimrc
+# install the Menlo-Powerline font
+$ wget https://gist.github.com/raw/1595572/417a3fa36e35ca91d6d23ac961071094c26e5fad/Menlo-Powerline.otf
+$ mv Menlo-Powerline.otf FONTDIR
+# bundle install vundle and everything else
+$ vim # ignore the bunch of errors you'll get, and run the following vim commands
+:BundleInstall
+:q
+$ # compile CommandT
+$ cd vim/bundle/Command-T
+$ rake make
+
 And for iTerm2, just import the plist file.
 
 
