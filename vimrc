@@ -30,6 +30,7 @@ nmap <silent> <C-D> :NERDTreeToggle<CR>
 set tabstop=2
 set shiftwidth=2
 set smartindent
+set expandtab
 
 set number
 set ofu=syntaxcomplete#Complete
