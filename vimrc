@@ -19,6 +19,7 @@ Bundle 'mutewinter/ir_black_mod'
 Bundle 'godlygeek/csapprox'
 Bundle 'wincent/Command-T'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'Rykka/ColorV'
 
 filetype plugin indent on
 syntax on
