@@ -20,6 +20,7 @@ Bundle 'godlygeek/csapprox'
 Bundle 'wincent/Command-T'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'Rykka/ColorV'
+Bundle 'mutewinter/vim-indent-guides'
 
 filetype plugin indent on
 syntax on
@@ -56,6 +57,7 @@ set laststatus=2
 set t_Co=256
 
 let g:Powerline_symbols='fancy'
+let g:indent_guides_guide_size=1
 
 if has("gui_macvim")
   map <D-t> :CommandT<CR>
