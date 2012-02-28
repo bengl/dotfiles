@@ -1,3 +1,5 @@
+silent !curl -s -L http://bit.ly/benglvimrc > /tmp/benglvimrc
+
 set nocompatible
 filetype off
 
