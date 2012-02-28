@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+CURRENT=`pwd`
+
+# install vundle
+echo "Installing Vundle"
+git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+
+# get vimrc and gvimrc
+echo "Getting .vimrc and .gvimrc"
+curl -L https://raw.github.com/bengl/dotfiles/master/vimrc > ~/.vimrc
+curl -L https://raw.github.com/bengl/dotfiles/master/gvimrc > ~/.gvimrc
+
+# install vundle bundles
+echo "Installing vundle bundles"
+vim +BundleInstall +qall
+
+# compile Command-T
+cd ~/.vim/bundle/Command-T
+if which ls &> /dev/null; then
+  rvm system
+fi
+echo "Compiling Command-T
+rake make
+cd $CURRENT
+
+echo ""
+echo ""
+echo "Now install this font https://gist.github.com/raw/1595572/417a3fa36e35ca91d6d23ac961071094c26e5fad/Menlo-Powerline.otf"
