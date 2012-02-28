@@ -60,6 +60,18 @@ set t_Co=256
 let g:Powerline_symbols='fancy'
 let g:indent_guides_guide_size=1
 
+if has("gui_running")
+  set guifont=Menlo-Powerline:h18
+  set guioptions-=T
+  set guioptions-=r
+  set guioptions-=R
+  set guioptions-=l
+  set guioptions-=L
+  set fuoptions=maxvert,maxhorz
+  set background=dark
+endif
+
 if has("gui_macvim")
   map <D-t> :CommandT<CR>
+  macmenu &File.New\ Tab key=<nop>
 endif

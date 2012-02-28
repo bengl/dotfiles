@@ -6,10 +6,9 @@ CURRENT=`pwd`
 echo "Installing Vundle"
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
-# get vimrc and gvimrc
-echo "Getting .vimrc and .gvimrc"
+# get vimrc
+echo "Getting .vimrc"
 curl -L https://raw.github.com/bengl/dotfiles/master/vimrc > ~/.vimrc
-curl -L https://raw.github.com/bengl/dotfiles/master/gvimrc > ~/.gvimrc
 
 # install vundle bundles
 echo "Installing vundle bundles"
