@@ -80,6 +80,10 @@ let g:Powerline_symbols='fancy'
 " indent guides aren't annoying
 let g:indent_guides_guide_size=1
 
+" allow modelines
+set modeline
+set modelines=3
+
 " gui stuff
 if has("gui_running")
   set guifont=Menlo-Powerline:h18
