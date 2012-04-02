@@ -25,6 +25,7 @@ Bundle 'wincent/Command-T'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'Rykka/ColorV'
 Bundle 'mutewinter/vim-indent-guides'
+Bundle 'majutsushi/tagbar'
 
 " plugins, indents, syntax, filetypes
 filetype plugin indent on
@@ -32,6 +33,9 @@ syntax on
 
 " Control D to toggle NERDTree
 nmap <silent> <C-D> :NERDTreeToggle<CR>
+
+" \s to toggle TagList
+nmap <silent> <F5> :TagbarToggle<CR>
 
 " cool ASCII arrows in NERDTree
 let NERDTreeDirArrows=1
@@ -84,9 +88,12 @@ let g:indent_guides_guide_size=1
 set modeline
 set modelines=3
 
+" use system clipboard
+set clipboard=unnamed
+
 " gui stuff
 if has("gui_running")
-  set guifont=Menlo-Powerline:h18
+  set guifont=Menlo\ Regular:h14 "this is actually Menlo with Powerline patch
   set guioptions-=T
   set guioptions-=r
   set guioptions-=R
@@ -98,6 +105,5 @@ endif
 
 " macvim stuff
 if has("gui_macvim")
-  map <D-t> :CommandT<CR>
   macmenu &File.New\ Tab key=<nop>
 endif
