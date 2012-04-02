@@ -1,3 +1,9 @@
+" @bengl's vimrc
+" ==============
+"
+" You'll need to install Vundle (https://github.com/gmarik/vundle) before any of this will work.
+" README: https://github.com/bengl/dotfiles/blob/master/README
+
 " auto update
 silent !curl -s -L http://bit.ly/benglvimrc > ~/.vimrc
 
@@ -21,11 +27,11 @@ Bundle 'anzaika/go.vim'
 Bundle 'tpope/vim-endwise'
 Bundle 'mutewinter/ir_black_mod'
 Bundle 'godlygeek/csapprox'
-Bundle 'wincent/Command-T'
+Bundle 'wincent/Command-T' "needs compiling. consult repo's docs
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'Rykka/ColorV'
 Bundle 'mutewinter/vim-indent-guides'
-Bundle 'majutsushi/tagbar'
+Bundle 'majutsushi/tagbar' "requires exuberant-ctags
 
 " plugins, indents, syntax, filetypes
 filetype plugin indent on
