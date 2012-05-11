@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 
-CURRENT=`pwd`
-
 # install vundle
 echo "Installing Vundle"
+mkdir -p ~/.vim/bundle
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
 # get vimrc
@@ -13,15 +12,6 @@ curl -L https://raw.github.com/bengl/dotfiles/master/vimrc > ~/.vimrc
 # install vundle bundles
 echo "Installing vundle bundles"
 vim +BundleInstall +qall
-
-# compile Command-T
-cd ~/.vim/bundle/Command-T
-if which ls &> /dev/null; then
-  rvm system
-fi
-echo "Compiling Command-T
-rake make
-cd $CURRENT
 
 echo ""
 echo ""
