@@ -27,11 +27,12 @@ Bundle 'anzaika/go.vim'
 Bundle 'tpope/vim-endwise'
 Bundle 'mutewinter/ir_black_mod'
 Bundle 'godlygeek/csapprox'
-Bundle 'wincent/Command-T' "needs compiling. consult repo's docs
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'Rykka/ColorV'
 Bundle 'mutewinter/vim-indent-guides'
-Bundle 'majutsushi/tagbar' "requires exuberant-ctags
+Bundle 'majutsushi/tagbar'
+Bundle 'kien/ctrlp.vim'
+Bundle 'mileszs/ack.vim'
 
 " plugins, indents, syntax, filetypes
 filetype plugin indent on
@@ -40,7 +41,7 @@ syntax on
 " Control D to toggle NERDTree
 nmap <silent> <C-D> :NERDTreeToggle<CR>
 
-" \s to toggle TagList
+" F5 to toggle TagList
 nmap <silent> <F5> :TagbarToggle<CR>
 
 " cool ASCII arrows in NERDTree
@@ -96,6 +97,25 @@ set modelines=3
 
 " use system clipboard
 set clipboard=unnamed
+
+" epic vim command completion
+set wildmenu
+
+" persistent undo
+set undofile
+set undodir=$HOME/.vim/undo
+set undolevels=1000
+set undoreload=10000
+
+" 80 char limit
+set colorcolumn=81
+highlight ColorColumn ctermbg=darkgray guibg=darkgray
+
+" CtrlP options
+let g:ctrlp_map = '<Leader>t'
+nmap <silent> <Leader>tt :CtrlPTag<CR>
+set wildignore+=.git/*
+let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files']
 
 " gui stuff
 if has("gui_running")
