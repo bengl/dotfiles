@@ -33,6 +33,8 @@ Bundle 'mutewinter/vim-indent-guides'
 Bundle 'majutsushi/tagbar'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim'
+Bundle 'dbext.vim'
+Bundle 'Shougo/neocomplcache'
 
 " plugins, indents, syntax, filetypes
 filetype plugin indent on
@@ -90,6 +92,7 @@ let g:Powerline_symbols='fancy'
 
 " indent guides aren't annoying
 let g:indent_guides_guide_size=1
+let g:indent_guides_start_level=2
 
 " allow modelines
 set modeline
@@ -116,6 +119,9 @@ let g:ctrlp_map = '<Leader>t'
 nmap <silent> <Leader>tt :CtrlPTag<CR>
 set wildignore+=.git/*
 let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files']
+
+" enable neocomplcache
+let g:neocomplcache_enable_at_startup = 1
 
 " gui stuff
 if has("gui_running")
