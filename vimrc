@@ -1,27 +1,34 @@
 " @bengl's vimrc
 " ==============
 "
-" You'll need to install Vundle (https://github.com/gmarik/vundle) before any of this will work.
+" You'll need to install Vundle (https://github.com/gmarik/vundle).
 " README: https://github.com/bengl/dotfiles/blob/master/README
 
 " auto update
-silent !curl -s -L http://bit.ly/benglvimrc > ~/.vimrc
+"silent !curl -s -L http://bit.ly/benglvimrc > ~/.vimrc
 
 " don't need vi compatibility mode
 set nocompatible
 
-" vundle stuff
+
+
+""
+"" Vundle
+""
+
+" initialize
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
-" vundle bundles
+" bundles
 Bundle 'scrooloose/nerdtree'
 Bundle 'rson/vim-conque'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-afterimage'
+Bundle 'tpope/vim-markdown'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'anzaika/go.vim'
 Bundle 'tpope/vim-endwise'
@@ -35,16 +42,17 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'dbext.vim'
 Bundle 'Shougo/neocomplcache'
+Bundle 'Conque-Shell'
+
+
+
+""
+"" Settings
+""
 
 " plugins, indents, syntax, filetypes
 filetype plugin indent on
 syntax on
-
-" Control D to toggle NERDTree
-nmap <silent> <C-D> :NERDTreeToggle<CR>
-
-" F5 to toggle TagList
-nmap <silent> <F5> :TagbarToggle<CR>
 
 " cool ASCII arrows in NERDTree
 let NERDTreeDirArrows=1
@@ -57,10 +65,6 @@ set expandtab
 
 " line numbers
 set number
-
-" syntax completion with Alt/Option-Space
-set ofu=syntaxcomplete#Complete
-imap <M-Space> <C-X><C-O>
 
 " use mouse even in terminal
 set mouse=a
@@ -112,18 +116,36 @@ set undoreload=10000
 
 " 80 char limit
 set colorcolumn=81
-highlight ColorColumn ctermbg=darkgray guibg=darkgray
+hi ColorColumn ctermbg=DarkGray guibg=DarkGray
 
 " CtrlP options
-let g:ctrlp_map = '<Leader>t'
-nmap <silent> <Leader>tt :CtrlPTag<CR>
 set wildignore+=.git/*
 let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files']
 
 " enable neocomplcache
 let g:neocomplcache_enable_at_startup = 1
 
-" gui stuff
+
+
+""
+"" Mappings
+""
+
+let g:ctrlp_map = '<Leader>p'
+nmap <silent> <Leader>pp :CtrlPTag<CR>
+nmap <silent> <C-D> :NERDTreeToggle<CR>
+nmap <silent> <Leader>t :TagbarToggle<CR>
+nmap <silent> <Leader>b :ConqueTermTab bash<CR>
+nmap <silent> ~ :tabnext<CR>
+nmap <silent> ~~ :tabnew<CR>
+
+
+
+""
+"" GUI-only settings
+""
+
+" gvim/macvim stuff
 if has("gui_running")
   set guifont=Menlo\ Regular:h14 "this is actually Menlo with Powerline patch
   set guioptions-=T
