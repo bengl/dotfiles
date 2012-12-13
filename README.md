@@ -10,7 +10,14 @@ A few notes:
 3. Ruby is required for some things to work.
 4. Use these files in any way you see fit. They're public domain.
 
-Installation:
+Features
+--------
+
+* A slew of plugins (check the Bundles section of the vimrc for details).
+* Installs all these plugins on the first run automatically.
+
+Installation
+------------
 
     $ curl -L -s http://bit.ly/benglvimrc > ~/.vimrc
 
