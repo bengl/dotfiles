@@ -62,6 +62,12 @@ Bundle 'msanders/snipmate.vim'
 filetype plugin indent on
 syntax on
 
+" run BundleInstall if first time
+if !isdirectory($HOME.'/.vim/bundle/nerdtree') " use a bundle i'll probably never get rid of
+  BundleInstall
+  q
+endif
+
 " cool ASCII arrows in NERDTree
 let NERDTreeDirArrows=1
 
