@@ -1,15 +1,22 @@
 " @bengl's vimrc
 " ==============
-"
-" You'll need to install Vundle (https://github.com/gmarik/vundle).
-" README: https://github.com/bengl/dotfiles/blob/master/README
+
+" BEGIN setup
+
+silent !mkdir -p ~/.vim/bundle > /dev/null 2>&1
+
+if !isdirectory($HOME.'/.vim/bundle/vundle')
+  silent !git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+endif
+
+" END setup
+
 
 " auto update
 "silent !curl -s -L http://bit.ly/benglvimrc > ~/.vimrc
 
 " don't need vi compatibility mode
 set nocompatible
-
 
 
 ""
@@ -43,6 +50,7 @@ Bundle 'mileszs/ack.vim'
 Bundle 'dbext.vim'
 Bundle 'Shougo/neocomplcache'
 Bundle 'Conque-Shell'
+Bundle 'msanders/snipmate.vim'
 
 
 

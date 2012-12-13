@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
 
-# install vundle
-echo "Installing Vundle"
-mkdir -p ~/.vim/bundle
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-
 # get vimrc
 echo "Getting .vimrc"
 curl -L https://raw.github.com/bengl/dotfiles/master/vimrc > ~/.vimrc
