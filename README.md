@@ -8,7 +8,8 @@ A few notes:
 1. I use both Vim 7.3 (in iTerm2) and MacVim.
 2. I don't disable the arrow keys. I still don't see the benefit. Sorry.
 3. Ruby is required for some things to work.
-4. Use these files in any way you see fit. They're public domain.
+4. <b>You need git. Seriously. Don't run this without git.</b>
+5. Use these files in any way you see fit. They're public domain.
 
 Features
 --------
