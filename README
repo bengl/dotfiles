@@ -1,21 +1,22 @@
 For the moment I've only included my vim-related files, and my iTerm2 config. My shell profile changes too often to be useful.
 
 A few notes:
-1) These days I'm mostly doing Ruby on Rails stuff, but as you can see by some of my plugins, I like to dabble.
-2) I use both Vim 7.3 (in iTerm2) and MacVim.
-3) I don't disable the arrow keys. I still don't see the benefit. Sorry.
-4) The iTerm2 config requires version 1.0.0.20111020 or greater.
-5) FONTDIR could be a few places depending on your system. On a Mac, try ~/Library/Fonts/.  On Linux, try ~/.fonts/.
-6) Ruby is required for some things to work, and so are gcc, make & friends.
-7) Use these files in any way you see fit. They're public domain.
+1) I use both Vim 7.3 (in iTerm2) and MacVim.
+2) I don't disable the arrow keys. I still don't see the benefit. Sorry.
+3) The iTerm2 config requires version 1.0.0.20111020 or greater.
+4) Ruby is required for some things to work, and so are gcc, make & friends.
+5) Use these files in any way you see fit. They're public domain.
 
 Installation:
 
-$ curl -L -s http://bit.ly/benglviminstall | bash
+$ curl -L -s http://bit.ly/benglvimrc > ~/.vimrc
 
-And then install the font as described at the end of the install script.
+And then install the font and use it in your terminal app:
+https://gist.github.com/raw/1595572/417a3fa36e35ca91d6d23ac961071094c26e5fad/Menlo-Powerline.otf
 
 For iTerm2, just import the plist file.
+
+The first time you run vim after this, it will install all of its plugins.
 
 
 
