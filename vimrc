@@ -51,6 +51,8 @@ Bundle 'dbext.vim'
 Bundle 'Shougo/neocomplcache'
 Bundle 'Conque-Shell'
 Bundle 'msanders/snipmate.vim'
+Bundle 'SirVer/ultisnips'
+Bundle 'terryma/vim-multiple-cursors'
 
 
 
