@@ -5,8 +5,8 @@
 
 silent !mkdir -p ~/.vim/bundle > /dev/null 2>&1
 
-if !isdirectory($HOME.'/.vim/bundle/vundle')
-  silent !git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+if !isdirectory($HOME.'/.vim/bundle/neobundle.vim')
+  silent !git clone https://github.com/Shougo/neobundle.vim.git ~/.vim/bundle/neobundle.vim
 endif
 
 " END setup
@@ -15,43 +15,49 @@ endif
 " auto update
 "silent !curl -s -L http://bit.ly/benglvimrc > ~/.vimrc
 
-" don't need vi compatibility mode
-set nocompatible
+" start NeoBundle
+if has('vim_starting')
+  set nocompatible               " Be iMproved
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
 
+call neobundle#rc(expand('~/.vim/bundle/'))
 
-""
-"" Vundle
-""
+" Let NeoBundle manage NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
 
-" initialize
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
+NeoBundle 'Shougo/vimproc', {
+      \ 'build' : {
+      \     'windows' : 'make -f make_mingw32.mak',
+      \     'cygwin' : 'make -f make_cygwin.mak',
+      \     'mac' : 'make -f make_mac.mak',
+      \     'unix' : 'make -f make_unix.mak',
+      \    },
+      \ }
+NeoBundle 'Shougo/vimshell'
+NeoBundle 'Shougo/neocomplete'
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'bling/vim-airline'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'jistr/vim-nerdtree-tabs'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-rails'
+NeoBundle 'tpope/vim-afterimage'
+NeoBundle 'tpope/vim-markdown'
+NeoBundle 'tpope/vim-endwise'
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'anzaika/go.vim'
+NeoBundle 'mutewinter/ir_black_mod'
+NeoBundle 'godlygeek/csapprox'
+NeoBundle 'Rykka/colorv.vim'
+NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'majutsushi/tagbar'
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'mileszs/ack.vim'
+NeoBundle 'dbext.vim'
+NeoBundle 'terryma/vim-multiple-cursors'
+NeoBundle 'uguu-org/vim-matrix-screensaver'
 
-" bundles
-Bundle 'scrooloose/nerdtree'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-afterimage'
-Bundle 'tpope/vim-markdown'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'anzaika/go.vim'
-Bundle 'tpope/vim-endwise'
-Bundle 'mutewinter/ir_black_mod'
-Bundle 'godlygeek/csapprox'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'Rykka/colorv.vim'
-Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'majutsushi/tagbar'
-Bundle 'kien/ctrlp.vim'
-Bundle 'mileszs/ack.vim'
-Bundle 'dbext.vim'
-Bundle 'Shougo/neocomplcache'
-Bundle 'Conque-Shell'
-Bundle 'msanders/snipmate.vim'
-Bundle 'SirVer/ultisnips'
-Bundle 'terryma/vim-multiple-cursors'
 
 
 
@@ -65,12 +71,22 @@ syntax on
 
 " run BundleInstall if first time
 if !isdirectory($HOME.'/.vim/bundle/nerdtree') " use a bundle i'll probably never get rid of
-  BundleInstall
+  NeoBundleInstall
   q
 endif
 
 " cool ASCII arrows in NERDTree
 let NERDTreeDirArrows=1
+
+" SuperTab like snippets behavior.
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" For snippet_complete marker.
+if has('conceal')
+  set conceallevel=2 concealcursor=i
+endif
 
 " tabs that make sense (and are 2 spaces)
 set tabstop=2
@@ -103,11 +119,12 @@ colorscheme ir_black_mod
 " always show the status line
 set laststatus=2
 
-" force 256 colors (needed for powerline)
+" force 256 colors
 set t_Co=256
 
-" make powerline look sexy
-let g:Powerline_symbols='fancy'
+" make airline look sexy
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 
 " indent guides aren't annoying
 let g:indent_guides_guide_size=1
@@ -131,48 +148,29 @@ set undoreload=10000
 
 " 80 char limit
 set colorcolumn=81
-hi ColorColumn ctermbg=DarkGray guibg=DarkGray
+hi! link ColorColumn StatusLine
 
 " CtrlP options
 set wildignore+=.git/*
 let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files']
 
-" enable neocomplcache
-let g:neocomplcache_enable_at_startup = 1
+" enable neocomplete
+let g:neocomplete#enable_at_startup = 1
+
+" per project .vimrc
+set exrc
+set secure
 
 
 
 ""
-"" Mappings
+"" Extra Mappings
 ""
 
 let g:ctrlp_map = '<Leader>p'
-nmap <silent> <Leader>pp :CtrlPTag<CR>
-nmap <silent> <C-D> :NERDTreeToggle<CR>
+nmap <silent> <Leader>o :CtrlPTag<CR>
+nmap <silent> <C-D> :NERDTreeTabsToggle<CR>
 nmap <silent> <Leader>t :TagbarToggle<CR>
 nmap <silent> <Leader>b :ConqueTermTab bash<CR>
 nmap <silent> ~ :tabnext<CR>
 nmap <silent> ~~ :tabnew<CR>
-
-
-
-""
-"" GUI-only settings
-""
-
-" gvim/macvim stuff
-if has("gui_running")
-  set guifont=Menlo\ Regular:h14 "this is actually Menlo with Powerline patch
-  set guioptions-=T
-  set guioptions-=r
-  set guioptions-=R
-  set guioptions-=l
-  set guioptions-=L
-  set fuoptions=maxvert,maxhorz
-  set background=dark
-endif
-
-" macvim stuff
-if has("gui_macvim")
-  macmenu &File.New\ Tab key=<nop>
-endif
