@@ -49,7 +49,6 @@ NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'anzaika/go.vim'
 NeoBundle 'mutewinter/ir_black_mod'
 NeoBundle 'godlygeek/csapprox'
-NeoBundle 'Rykka/colorv.vim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'kien/ctrlp.vim'
@@ -69,10 +68,12 @@ NeoBundle 'uguu-org/vim-matrix-screensaver'
 filetype plugin indent on
 syntax on
 
-" run BundleInstall if first time
-if !isdirectory($HOME.'/.vim/bundle/nerdtree') " use a bundle i'll probably never get rid of
+" install if needed. quit on first install
+if !isdirectory($HOME.'/.vim/bundle/nerdtree')
   NeoBundleInstall
   q
+else
+  NeoBundleCheck
 endif
 
 " cool ASCII arrows in NERDTree
