@@ -131,6 +131,10 @@ let g:airline#extensions#tabline#enabled = 1
 let g:indent_guides_guide_size=1
 let g:indent_guides_start_level=2
 
+" unwanted whitespace indicators
+set list
+set listchars=tab:>_,trail:_
+
 " allow modelines
 set modeline
 set modelines=3
@@ -177,3 +181,4 @@ nmap <silent> ~ :tabnext<CR>
 nmap <silent> ~~ :tabnew<CR>
 nmap <silent> <Tab> :bnext<CR>
 nmap <silent> <S-Tab> :bprevious<CR>
+
