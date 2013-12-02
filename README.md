@@ -7,9 +7,10 @@ A few notes:
 
 1. I use Vim 7.3, in iTerm2 or gnome-terminal, depending on what platform. I don't use GUI Vims, since I've run into some problems with colorcolumn in particular that don't happen in terminal versions. Oh well. Real programmers never leave the terminal, right?
 2. I don't disable the arrow keys. I still don't see the benefit. Sorry.
-3. Ruby, lua, python3 and C build tools are required for some things to work, so make sure your Vim is built accordingly.
-4. **You need git. Seriously. Don't run this without git.**
-5. Use these files in any way you see fit. They're public domain.
+3. Ruby, lua and python3 are required for some things to work, so make sure your Vim is built accordingly.
+4. C build tools are also required. [The silver searcher](https://github.com/ggreer/the_silver_searcher#installation) is needed for ag.vim.
+5. **You need git. Seriously. Don't run this without git.**
+6. Use these files in any way you see fit. They're public domain.
 
 Features
 --------
