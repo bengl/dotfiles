@@ -71,7 +71,7 @@ syntax on
 " install if needed. quit on first install
 if !isdirectory($HOME.'/.vim/bundle/nerdtree')
   NeoBundleInstall
-  q
+  qall
 else
   NeoBundleCheck
 endif
