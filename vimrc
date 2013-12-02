@@ -53,7 +53,7 @@ NeoBundle 'Rykka/colorv.vim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'mileszs/ack.vim'
+NeoBundle 'rking/ag.vim'
 NeoBundle 'dbext.vim'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'uguu-org/vim-matrix-screensaver'
@@ -169,8 +169,10 @@ set secure
 
 let g:ctrlp_map = '<Leader>p'
 nmap <silent> <Leader>o :CtrlPTag<CR>
+nmap <silent> <Leader>b :CtrlPBuffer<CR>
 nmap <silent> <C-D> :NERDTreeTabsToggle<CR>
 nmap <silent> <Leader>t :TagbarToggle<CR>
-nmap <silent> <Leader>b :ConqueTermTab bash<CR>
 nmap <silent> ~ :tabnext<CR>
 nmap <silent> ~~ :tabnew<CR>
+nmap <silent> <Tab> :bnext<CR>
+nmap <silent> <S-Tab> :bprevious<CR>
