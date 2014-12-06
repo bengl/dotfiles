@@ -21,7 +21,7 @@ if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
@@ -38,7 +38,7 @@ NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/neocomplete'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'bling/vim-airline'
-NeoBundle 'alexdavid/nerdtree_icons'
+NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'jistr/vim-nerdtree-tabs'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-rails'
@@ -57,6 +57,7 @@ NeoBundle 'dbext.vim'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'uguu-org/vim-matrix-screensaver'
 
+call neobundle#end()
 
 
 
@@ -177,7 +178,7 @@ nmap <silent> <Leader>o :CtrlPTag<CR>
 nmap <silent> <Leader>b :CtrlPBuffer<CR>
 nmap <silent> <C-D> :NERDTreeTabsToggle<CR>
 nmap <silent> <Leader>t :TagbarToggle<CR>
-nmap <silent> ~ :tabnext<CR>
-nmap <silent> ~~ :tabnew<CR>
+nmap <silent> ` :tabnext<CR>
+nmap <silent> ~ :tabnew<CR>
 nmap <silent> <Tab> :bnext<CR>
 nmap <silent> <S-Tab> :bprevious<CR>
