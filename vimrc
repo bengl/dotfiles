@@ -38,7 +38,7 @@ NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/neocomplete'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'bling/vim-airline'
-NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'alexdavid/nerdtree_icons'
 NeoBundle 'jistr/vim-nerdtree-tabs'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-rails'
@@ -69,7 +69,7 @@ filetype plugin indent on
 syntax on
 
 " install if needed. quit on first install
-if !isdirectory($HOME.'/.vim/bundle/nerdtree')
+if !isdirectory($HOME.'/.vim/bundle/tagbar')
   NeoBundleInstall
   qall
 else
@@ -181,4 +181,3 @@ nmap <silent> ~ :tabnext<CR>
 nmap <silent> ~~ :tabnew<CR>
 nmap <silent> <Tab> :bnext<CR>
 nmap <silent> <S-Tab> :bprevious<CR>
-
