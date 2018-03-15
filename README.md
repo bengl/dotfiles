@@ -1,43 +1,29 @@
 Bryan's Super-Awesome Vimrc
 ===========================
 
-For the moment I've only included my super-awesome vimrc. My shell profile changes too often to be useful.
+For the moment I've only included my super-awesome vimrc. My shell profile changes too often to be generally useful.
 
 A few notes:
 
-1. I use Vim 7.3, in iTerm2 or gnome-terminal, depending on what platform. I don't use GUI Vims, since I've run into some problems with colorcolumn in particular that don't happen in terminal versions. Oh well. Real programmers never leave the terminal, right?
-2. I don't disable the arrow keys. I still don't see the benefit. Sorry.
-3. Ruby, lua and python3 are required for some things to work, so make sure your Vim is built accordingly.
-4. C build tools are also required. [The silver searcher](https://github.com/ggreer/the_silver_searcher#installation) is needed for ag.vim.
-5. **You need git. Seriously. Don't run this without git.**
-6. Use these files in any way you see fit. They're public domain.
-
-Features
---------
-
-* A slew of plugins managed by NeoBundle:
-  * Vimshell
-  * Airline
-  * TagBar
-  * NERDTree (with NERDTreeTabs!)
-  * NeoComplete and NeoSnippet
-  * Fugitive
-  * Indent Guides
-  * CtrlP
-  * Multiple Cursors
-  * Matrix Screensaver, just for fun
-  * Some other ones. Check the "Bundles" section in .vimrc.
-* Installs all these plugins on the first run automatically. No extra install scripts.
-* Uses a few sensible key mappings.
+1. I use NeoVim, in a variety of terminal emulators. I don't use GUI Vims, since I've run into some problems with colorcolumn in particular that don't happen in terminal versions. Oh well.
+1. I don't disable the arrow keys. I still don't see the benefit. Sorry.
+1. Ruby, lua and python3 are required for some things to work, so make sure your Vim is built accordingly.
+1. C build tools are also required.
+1. **You need git. Seriously. Don't run this without git.**
+1. Use these files in any way you see fit. They're public domain.
 
 Installation
 ------------
 
+    # vim
     $ curl -L -s http://bit.ly/benglvimrc > ~/.vimrc
+
+    # NeoVim
+    $ mkdir -p ~/.config/nvim/init.vim
 
 And then install [one of these fonts](https://github.com/Lokaltog/powerline-fonts) and use it in your terminal app.
 
-The first time you run vim after this, it will install all of its plugins and then quit.
+The first time you run vim after this, you'll need to run `:PlugInstall` to install the plugins.
 
 
 
